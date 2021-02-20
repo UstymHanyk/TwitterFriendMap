@@ -1,9 +1,8 @@
 """
-TwiterApiReader by Ustym Hanyk
+A module for getting a friend list and their locations(lat,long).
 """
 import requests
 import json
-from pprintpp import pprint as pp
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderUnavailable
 
@@ -32,7 +31,7 @@ def get_user_friends(username):
     for friend in json_response["users"]:
         if friend["location"]:
             friend_list.append((friend["screen_name"], friend["location"]))
-    print(friend_list)
+    # print(friend_list)
     return friend_list
 
 def friends_geolocator(friend_list):
@@ -60,6 +59,3 @@ def friends_geolocator(friend_list):
 
     friend_loc_list_clean = [i for i in friend_loc_list if i[1] is not None and i[1] != 'unavailable']
     return friend_loc_list_clean
-
-friends_loc_list = get_user_friends("@BarackObama")
-print(friends_geolocator(friends_loc_list))

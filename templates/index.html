@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class=" main_container">        
+ 		<span class="title_text underline--magical">TwitterFriendMap</span>
+        <br><br>
+        <br>
+      	<form action="/map_generation" method="post">
+    	<input name="username" placeholder="Enter a Twitter username" type="text"/>
+    	<br>
+    	<input type="submit" value="Generate a map"/></form>
+    </div>
+{% endblock %}
+ 
