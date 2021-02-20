@@ -37,7 +37,15 @@ input[type=submit]{
   cursor: pointer;
 }
 
-
+input[type=submit]:hover{
+    color:#FFFFFF !important;
+    background: #FF416C;
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background-image: linear-gradient(to right, #FF4B2B, #FF416C);
+    background-repeat: no-repeat;
+    transition: all 0.25s ease-in;
+}
 .underline--magical {
     background: #FF416C;
     background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
@@ -53,4 +61,8 @@ input[type=submit]{
     background-size: 100% 88%;
     color: #FFFFFF !important;
 
+}
+.hint{
+    color: #232323 !important;
+    font-size: 0.75rem !important;
 }

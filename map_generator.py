@@ -23,7 +23,6 @@ def generate_map(friends_loc_list):
                         tiles="cartodbdark_matter")
 
     fg = folium.FeatureGroup(name="Twitter Friends map")
-    fg_routes = folium.FeatureGroup(name="Routes")
     fill_colors = ["#4CC9F0","#4895EF", "#4361EE","#3F37C9","#3A0CA3","#480CA8","#560BAD","#F72585","#7209B7","#B5179E"]
 
     marker_cluster = MarkerCluster().add_to(fl_map)
@@ -46,7 +45,5 @@ def generate_map(friends_loc_list):
 
     fg.add_child(folium.Marker(location=friends_loc_list[0][1]))
     fl_map.add_child(fg)
-    fl_map.add_child(fg_routes)
-    fl_map.add_child(folium.LayerControl())
-    fl_map.save('templates/raw_map.html')
-# generate_map(group_duplicates(friends_loc_list))
+    # fl_map.save('templates/raw_map.html')
+    return fl_map

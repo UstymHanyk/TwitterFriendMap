@@ -11,9 +11,10 @@ def index():
 def wait_for_map_generation():
     # if not request.form.get("domain"):
     #     return render_template("failure.html")
-    username = "@" + request.form.get("username")
-    print(username)
+    username = request.form.get("username")
+    if "@" not in username:
+        username = "@" + username
     friends_loc_list = friends_geolocator(get_user_friends(username))
-    print(friends_loc_list)
-    generate_map(group_duplicates(friends_loc_list))
-    return render_template("map.html")
+    fl_map = generate_map(group_duplicates(friends_loc_list))
+    return fl_map._repr_html_()
+    # return render_template('index.html', map=map._repr_html_())

@@ -19,7 +19,7 @@ def get_user_friends(username):
     }
     search_params = {
         "screen_name": f"{username}",
-        "count": 50
+        "count": 35
     }
 
     user_info = requests.get(f"{base_url}1.1/users/show.json", headers=search_headers, params={"screen_name":username})
